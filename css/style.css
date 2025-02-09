@@ -1,0 +1,511 @@
+@import url('erode.css');
+@import url('ranade.css');
+
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Erode-Variable', 'Times New Roman', Times, serif;
+  background-color: #ccc;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+iframe {
+  position: fixed;
+}
+
+#sketch {
+  float: left;
+  width: 50%;
+  height: 100%;
+  border: none;
+}
+
+#text {
+  width: 50%;
+  height: 100%;
+  float: right;
+}
+
+mark {
+  color: #fff;
+  background: black;
+  padding: 4px;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: #fff;
+  background: black;
+}
+
+::selection {
+  color: #fff;
+  background: black;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera*/
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox*/
+hmtl {
+  -ms-overflow-style: none;
+  /* IE and Edge*/
+  scrollbar-width: none;
+  /* Firefox*/
+  overflow: -moz-scrollbars-none;
+}
+
+p {
+  /*font-family: "Ranade-Variable";*/
+  font-size: 22px;
+  line-height: normal;
+  padding-bottom: 25px;
+}
+
+h2 {
+  font-family: "Ranade-Variable", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
+  font-weight: normal;
+  padding: 10px 0px;
+  line-height: normal;
+}
+
+h3 {
+  font-family: 'Erode-Variable';
+  font-size: 25px;
+  font-weight: normal;
+  padding: 10px 0px;
+  line-height: normal;
+}
+h4 {
+  font-family: 'Erode-Variable';
+  font-size: 22px;
+  font-style: italic;
+
+}
+
+.doku {
+  margin: auto;
+  padding: 25px;
+}
+
+.dokuIntro {
+  text-align: left;
+  padding: 30vh 0 0 0;
+  margin: 0vw 20vw;
+}
+.center{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.dokuMain {
+  margin: 5vw 20vw;
+}
+
+.bglogo {
+  content: url("../metc_logo_black.svg");
+  width: 225px;
+  transition: 0.3s;
+  position: fixed;
+  padding: 25px;
+}
+
+.smllogo {
+  content: url("../metc_smllogo_black.svg");
+  width: 105px;
+  transition: 0.3s;
+  position: fixed;
+  padding: 25px;
+}
+
+.indexLogoDok {
+  content: url("../metc_logo_black.svg");
+  width: 225px;
+  transition: 0.3s;
+  position: fixed;
+  padding: 25px;
+}
+
+.indexLogoSmallDok {
+  content: url("../metc_smllogo_black.svg");
+  width: 105px;
+  transition: 0.3s;
+  position: fixed;
+  padding: 25px;
+}
+
+details h2 {
+  transition: 0.3s;
+}
+
+details>summary {
+  cursor: pointer;
+  list-style: none;
+  text-align: left;
+
+}
+
+.artists h2 {
+  text-align: right;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details h2:hover {
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+details[open] h2 {
+  font-weight: bold;
+  text-align: left;
+  transition: 0.3s;
+}
+
+a,
+a h2 {
+  color: black;
+  text-align: right;
+  transition: 0.3s;
+}
+
+a,
+a h2:link {
+  text-decoration: none;
+}
+
+a,
+a h2:hover {
+  font-weight: bolder;
+  transition: 0.3s;
+}
+
+a,
+a h2:active {
+  font-weight: bolder;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+ul li {
+
+  color: black;
+  margin: 0px;
+  text-align: right;
+  font-size: 25px;
+}
+
+ul li p {
+  text-align: left;
+}
+.data-list{
+  padding-left: 20px;
+}
+.data-list ul{
+  list-style-type:square;
+  display:inline;
+}
+.data-list li{
+  text-align: left;
+  font-size: 22px;
+  line-height: normal;
+}
+
+hr {
+  position: relative;
+  top: 0px;
+  border: none;
+  height: 3px;
+  background: black;
+  margin: 10px 0;
+}
+
+.imgSub {
+  font-size: 20px;
+  margin: 0;
+  padding-top: 5px;
+}
+
+.row {
+  display: flex;
+  margin: 0px 0px;
+  padding-bottom: 80px;
+}
+
+.main {
+  min-height: 100vh;
+}
+
+.column {
+  flex: 50%;
+  padding: 15px 25px;
+}
+
+.werkeHead {
+  padding: 0px 25px;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+}
+
+.sampleOutput {
+  width: 100%;
+  padding: 0px 18px;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.toolTip p {
+  color: #ccc;
+  font-size: 18px;
+  position: fixed;
+  bottom: 0;
+  margin: 0;
+  padding: 25px;
+  line-height: 1.4em;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+}
+
+.textAndLogo img{
+  padding: 25px;
+  content: url("../metc_logo_white.svg");
+  width: 225px;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.textSpecial {
+  font-style: italic;
+}
+
+.textSpecial a{
+  float: right;
+  font-size: 0.65em;
+}
+
+
+footer {
+  width: 50%;
+  position: fixed;
+  bottom: 0;
+  text-align: justify;
+  text-align-last: justify;
+}
+
+footer li {
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 25px;
+  display: inline-block;
+
+}
+
+footer ul li a h2 {
+  color: #ccc;
+  font-size: 25px;
+  padding: 0px;
+}
+
+/*Screen sizes*/
+@media screen and (max-width: 2560px) {
+
+  p {
+    font-size: 18px;
+  }
+
+  .data-list li{
+    font-size: 18px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  h4 {
+    font-size: 18px;
+
+  }
+
+  footer ul li a h2 {
+    font-size: 18px;
+  }
+
+  .imgSub {
+    font-size: 16px;
+  }
+
+  .dokuIntro {
+    margin: 0vw 10vw;
+  }
+  
+  .dokuMain {
+    margin: 5vw 10vw;
+  }
+
+  .bglogo {
+    content: url("../metc_logo_black.svg");
+    width: 225px;
+    transition: 0.3s;
+    position: fixed;
+  }
+
+  .smllogo {
+    content: url("../metc_smllogo_black.svg");
+    width: 105px;
+    transition: 0.3s;
+    position: fixed;
+  }
+}
+
+/*Mobile Screens*/
+@media only screen and (max-width: 820px) {
+
+  .row {
+    display: block;
+  }
+
+  #sketch {
+    display: none;
+  }
+
+  #text {
+    width: 100%;
+    height: 100%;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+
+  .column {
+    width: 85vw;
+    margin: auto;
+  }
+
+  .indexLogo {
+    content: url("../metc_logo_black.svg");
+    width: 200px;
+    transition: 0.3s;
+    position: fixed;
+    padding: 18px;
+  }
+
+  .indexLogoSmall {
+    content: url("../metc_smllogo_black.svg");
+    width: 90px;
+    transition: 0.3s;
+    position: fixed;
+    padding: 18px;
+  }
+
+  .topRowMobile {
+    padding-bottom: 40vh;
+  }
+
+  footer {
+    width: 100vw;
+    background-color: black;
+  }
+
+  footer li {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    background-color: black;
+
+  }
+  ul.nav {
+    padding: 18px;
+  }
+
+  footer ul li a h2 {
+    font-size: 14px;
+  }
+
+  .doku {
+    margin: auto;
+    padding: 0px;
+  }
+
+  .dokuIntro {
+    padding: 40vh 0 0 0;
+    margin: 0 0;
+  }
+  
+  .center{
+    margin: 0;
+    position: relative;
+    top: 0%;
+    left: 0%;
+    transform: translate(0, 0);
+  }
+
+  .center {
+    padding: 40vh 0 0 0;
+  }
+
+  .dokuMain {
+    margin: 8vh 0vh 0vh 0vh;
+  }
+
+  .indexLogoDok {
+    content: url("../metc_logo_black.svg");
+    width: 200px;
+    transition: 0.3s;
+    position: fixed;
+    padding: 18px;
+  }
+
+  .indexLogoSmallDok {
+    content: url("../metc_smllogo_black.svg");
+    width: 90px;
+    transition: 0.3s;
+    position: fixed;
+    padding: 18px;
+  }
+}

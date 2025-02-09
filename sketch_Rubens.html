@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="language" content="de" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords"
+        content="Grafik-Design, Grafikdesign, Design, Kunst, Zeichnen, Malen, Künstler, Moritz Lambrecht, Kommunikationsdesign, 
+    Code, Creative Code, Generative Gestaltung, Generatives Design, Coding, Informatik, p5, processing, p5.js, javascript" />
+    <meta name="author" content="Moritz Lambrecht" />
+    <meta name="copyright" content="Moritz Lambrecht" />
+    <meta name="description" content="Manipulatio et Creatio ist die Bachelorarbeit von Kommunikationsdesigner Moritz Lambrecht. 
+Erfahre generative Gestaltung als Designwerkzeug." />
+    <link rel="icon" type="image/svg+xml" href="metc_favicon.svg" sizes="any">
+    <link rel="icon" type="image/png" href="/metc_favicon_32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/metc_favicon_96.png" sizes="96x96">
+    <link rel="apple-touch-icon" href="/metc_favicon_180.png" sizes="180x180">
+    <link rel=”mask-icon” href=”/metc_favicon_transparent.svg” color=”#000000">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Rubens Sketch</title>
+
+    <style>
+        html,
+        body {
+            overflow: hidden;
+            touch-action: none;
+            background-color: black;
+
+            cursor: url("metc_cursor_black.svg"), auto;
+        }
+    </style>
+
+    <script src="libraries/p5/p5.js"></script>
+
+    <script src="libraries/generative-design-library/generative-design-library.js" type="text/javascript"></script>
+    <script src="libraries/chroma-js/chroma.js" type="text/javascript"></script>
+
+    <script>
+        // enter reloads the entire page
+        document.addEventListener('keydown', function (e) {
+            if (e.keyCode == 13)
+                window.location.reload();
+        })
+    </script>
+</head>
+
+<body>
+    <script>
+        let img;
+        let selectedX = 0;
+        let selectedY = 0;
+        let copySize = 50;
+        let yFactor = 1;
+
+        function preload() {
+            img = loadImage("img/Peter_Paul_Rubens_Diana_and_Her_Nymphs_Departing_for_the_Hunt.jpg");
+        }
+
+        function setup() {
+            createCanvas(windowWidth, windowHeight);
+            var scale = 1;
+            imageMode(CENTER);
+
+            if (windowWidth > windowHeight) {
+                image(img, 0.5 * width, 0.5 * height, scale * img.width * height / img.height, scale *
+                    height); // to fit height
+            } else {
+                image(img, 0.5 * width, 0.5 * height, scale * width, scale * img.height * width / img
+                    .width); // to fit width
+            }
+        }
+
+        function mousePressed() {
+            // Set the selection
+            selectedX = mouseX;
+            selectedY = mouseY;
+        }
+
+        function draw() {
+            if (mouseIsPressed) {
+                copy(mouseX, mouseY, copySize, copySize * yFactor, selectedX, selectedY, copySize, copySize * yFactor);
+            }
+        }
+
+        function keyPressed() {
+
+            // hitting s or S saves an image
+            if (key == 's' || key == 'S') {
+                save("MetC_Rubens_Sketch.png");
+            }
+
+            if (key == 'r' || key == 'R') {
+                var scale = 1;
+                if (windowWidth > windowHeight) {
+                    image(img, 0.5 * width, 0.5 * height, scale * img.width * height / img.height, scale *
+                        height); // to fit height
+                } else {
+                    image(img, 0.5 * width, 0.5 * height, scale * width, scale * img.height * width / img
+                        .width); // to fit width
+                }
+            }
+
+            if (key == "1") {
+                copySize = 50;
+            }
+            if (key == "2") {
+                copySize = 100;
+            }
+            if (key == "3") {
+                copySize = 200;
+            }
+            if (key == "4") {
+                copySize = 500;
+            }
+            if (key == "5") {
+                copySize = 700;
+            }
+            if (key == "6") {
+                copySize = 1500;
+            }
+            if (key == "7") {
+                copySize = 2000;
+            }
+
+            if (keyCode == RIGHT_ARROW) {
+                yFactor += 1;
+            }
+            if (keyCode == LEFT_ARROW) {
+                yFactor -= 1;
+                if (yFactor == 0) {
+                    yFactor = 1;
+                }
+            }
+        }
+    </script>
+    <div class="textAndLogo">
+        <div class="logoWhite">
+            <img width="0" style="position: fixed;">
+        </div>
+
+        <div class="toolTip">
+            <p> <mark>Klicke und ziehe über das Bild</mark> <br>
+                <mark> Größe (1 - 7)</mark> <br>
+                <mark>Höhe (RECHTE PFEILTASTE, LINKE PFEILTASTE)</mark><br>
+                <mark>Speichern (S) / Reset (R) / Neuladen (ENTER)</mark></p>
+        </div>
+    </div>
+
+</body>
+
+</html>

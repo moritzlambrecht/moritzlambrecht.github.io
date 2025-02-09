@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta name="language" content="de" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords"
+    content="Grafik-Design, Grafikdesign, Design, Kunst, Zeichnen, Malen, Künstler, Moritz Lambrecht, Kommunikationsdesign, 
+  Code, Creative Code, Generative Gestaltung, Generatives Design, Coding, Informatik, p5, processing, p5.js, javascript" />
+  <meta name="author" content="Moritz Lambrecht" />
+  <meta name="copyright" content="Moritz Lambrecht" />
+  <meta name="description" content="Manipulatio et Creatio ist die Bachelorarbeit von Kommunikationsdesigner Moritz Lambrecht. 
+Erfahre generative Gestaltung als Designwerkzeug." />
+  <link rel="icon" type="image/svg+xml" href="metc_favicon.svg" sizes="any">
+  <link rel="icon" type="image/png" href="/metc_favicon_32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/metc_favicon_96.png" sizes="96x96">
+  <link rel="apple-touch-icon" href="/metc_favicon_180.png" sizes="180x180">
+  <link rel=”mask-icon” href=”/metc_favicon_transparent.svg” color=”#000000">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Renoir Sketch</title>
+
+  <style>
+    html,
+    body {
+      overflow: hidden;
+      touch-action: none;
+      background-color: black;
+
+      cursor:url("metc_cursor_black.svg"), auto;
+    }
+  </style>
+
+  <script src="libraries/p5/p5.js"></script>
+
+  <script src="libraries/generative-design-library/generative-design-library.js" type="text/javascript"></script>
+  <script src="libraries/chroma-js/chroma.js" type="text/javascript"></script>
+
+  <script>
+    // enter reloads the entire page
+    document.addEventListener('keydown', function (e) {
+      if (e.keyCode == 13)
+        window.location.reload();
+    })
+  </script>
+
+</head>
+
+<body>
+  <script>
+    'use strict';
+    var img;
+    var colors = [];
+
+    let fr = 5;
+
+    function preload() {
+      loadImage('img/Pierre-Auguste_Renoir_Two_Sisters_lowestres.jpeg', setImage);
+    }
+
+    function setup() {
+      createCanvas(windowWidth, windowHeight);
+      noStroke();
+
+      img.resize(windowWidth, windowHeight); // to fit window size
+    }
+
+    function draw() {
+      var tileCount = floor(width / max(mouseX, 15)); // Number is max detail
+
+      let rectSizeY = height / tileCount;
+      let rectSizeX = width / tileCount;
+
+      img.loadPixels();
+      colors = [];
+
+      for (var gridY = 0; gridY < tileCount; gridY++) {
+        for (var gridX = 0; gridX < tileCount; gridX++) {
+          var px = int(gridX * rectSizeX);
+          var py = int(gridY * rectSizeX);
+          var i = (py * img.width + px) * 4;
+          var c = color(img.pixels[i], img.pixels[i + 1], img.pixels[i + 2], img.pixels[i + 3]);
+          colors.push(c);
+        }
+      }
+
+      frameRate(fr);
+
+      // randomly choosing colors
+      for (var gridY = 0; gridY < tileCount; gridY++) {
+        for (var gridX = 0; gridX < tileCount; gridX++) {
+          let i = floor(random(colors.length), 0)
+          fill(colors[i]);
+          rect(gridX * rectSizeX, gridY * rectSizeY, rectSizeX, rectSizeY);
+        }
+      }
+    }
+
+    function keyPressed() {
+
+      if (key == '1') {
+        fr = 0.5;
+      }
+      if (key == '2') {
+        fr = 5;
+      }
+      if (key == '3') {
+        fr = 30;
+      }
+
+      // hitting s or S saves an image
+      if (key == 's' || key == 'S') {
+        save("MetC_Renoir_Sketch.png");
+      }
+    }
+
+    function setImage(loadedImageFile) {
+      img = loadedImageFile;
+    }
+  </script>
+  <div class="textAndLogo">
+    <div class="logoWhite">
+      <img width="0" style="position: fixed;">
+    </div>
+
+    <div class="toolTip">
+      <p> <mark>Bewege die Maus von rechts nach links </mark><br>
+          <mark>Aktualisierungsrate (1 - 3) </mark><br>
+          <mark>Speichern (S) / Neuladen (ENTER)</mark></p>
+    </div>
+  </div>
+
+</body>
+
+
+</html>

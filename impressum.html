@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title>Manipulatio et Creatio – Impressum</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <meta name="language" content="de" />
+    <meta name="keywords" content="Grafik-Design, Grafikdesign, Grafik-Design, Design, Kunst, Zeichnen, Malen, Künstler, Moritz Lambrecht, Kommunikationsdesign, 
+        Code, Creative Code, Generative Gestaltung, Generatives Design, Coding, Informatik" />
+    <meta name="author" content="Moritz Lambrecht" />
+    <meta name="copyright" content="Moritz Lambrecht" />
+    <meta name="description"
+        content="Manipulatio et Creatio ist die Bachelor-Arbeit von Kommunikationsdesigner Moritz Lambrecht. Erlebe generative Gestaltung als Designwerkzeug." />
+    <link rel="icon" type="image/svg+xml" href="metc_favicon.svg" sizes="any">
+    <link rel="icon" type="image/png" href="/metc_favicon_32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/metc_favicon_96.png" sizes="96x96">
+    <link rel="apple-touch-icon" href="/metc_favicon_180.png" sizes="180x180">
+    <link rel=”mask-icon” href=”/metc_favicon_transparent.svg” color=”#000000">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="libraries/jquery/jquery.js"></script>
+    <script type="text/javascript">
+        function go(loc) {
+            document.getElementByClass('sketch').src = loc;
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <main>
+        <a href="index.html">
+            <div class="indexLogoDok">
+                <img width=" 0" style="position: fixed;">
+            </div>
+        </a>
+        <div class="doku">
+
+            <div class="row">
+                <div class="column">
+
+                    <div class="center">
+
+                        <h2><mark>Impressum</mark></h2>
+
+                        <h3>Angaben gem&auml;&szlig; &sect; 5 TMG</h3>
+                        <p>Mo</p>
+                        <br>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <footer>
+            <ul class="nav">
+                <li><a href="index.html">
+                        <h2><mark>../zurück</mark></h2>
+                    </a></li>
+            </ul>
+        </footer>
+    </main>
+
+    <script type="text/javascript">
+        //change logo onscroll
+        $(function () {
+            var logo = $(".indexLogoDok");
+            $(window).scroll(function () {
+                var scroll = $(window).scrollTop();
+
+                if (scroll >= 200) {
+                    logo.removeClass('indexLogoDok').addClass("indexLogoSmallDok");
+                } else {
+                    logo.removeClass("indexLogoSmallDok").addClass('indexLogoDok');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title>Manipulatio et Creatio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <meta name="language" content="de" />
+    <meta name="keywords"
+        content="Grafik-Design, Grafikdesign, Design, Kunst, Zeichnen, Malen, Künstler, Moritz Lambrecht, Kommunikationsdesign, 
+        Code, Creative Code, Generative Gestaltung, Generatives Design, Coding, Informatik, p5, processing, p5.js, javascript" />
+    <meta name="author" content="Moritz Lambrecht" />
+    <meta name="copyright" content="Moritz Lambrecht" />
+    <meta name="description" content="Manipulatio et Creatio ist die Bachelorarbeit von Kommunikationsdesigner Moritz Lambrecht. 
+    Erfahre generative Gestaltung als Designwerkzeug." />
+    <link rel="icon" type="image/svg+xml" href="metc_favicon.svg" sizes="any">
+    <link rel="icon" type="image/png" href="/metc_favicon_32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/metc_favicon_96.png" sizes="96x96">
+    <link rel="apple-touch-icon" href="/metc_favicon_180.png" sizes="180x180">
+    <link rel=”mask-icon” href=”/metc_favicon_transparent.svg” color=”#000000">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="libraries/jquery/jquery.js"></script>
+
+    <script type="text/javascript">
+        function go(loc) {
+            document.getElementById('sketch').src = loc;
+        }
+
+        // setting focus back on iframe
+        setInterval(function () {
+            document.getElementById("sketch").contentWindow.focus();
+        }, 100);
+
+        function scrollToArtist(id) {
+
+            var el = document.getElementById(id)
+            el.scrollIntoView({
+                behavior: 'auto',
+                block: 'start'
+            });
+        }
+    </script>
+
+    </style>
+</head>
+
+<body>
+
+    <iframe scrolling="no" seamless="seamless" id="sketch" autofocus="true" src="sketch_Rubens.html" name="sketch"
+        style="overflow: hidden;"></iframe>
+
+    <div id="text">
+        <div class="main">
+            <div class="topRowMobile">
+                <div class="indexLogo">
+                    <img width="0" style="position: fixed;">
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="column">
+
+                    <h2><mark>Einleitung</mark></h2>
+                    <br>
+                    <h2>Manipulatio et Creatio – Generative Gestaltung als
+                        Designwerkzeug</h2>
+                    <p>
+                        <br>
+
+                        <span class="textSpecial">Manipulatio et Creatio</span> ist eine explorative Arbeit; ein
+                        prototypischer Ansatz zur Anwendung
+                        'Creative Codings' im Kontext Design und Kunst und deren Verschmelzung:<br><br>
+
+                        Generative Gestaltung wird im Kontext der Erzeugung abstrahierter / experimenteller Visuals
+                        erfahrbar gemacht. Konkret handelt es sich bei der verwendeten Sprache um Javascript mit der
+                        Library p5.js.
+                        Die Arbeit zeigt fünf entstandene Tools zu fünf verschiedenen Künstlern
+                        und damit insgesamt fünf verschiedenen Werken. Fünf klare Beispiele, um die Relevanz,
+                        Sinnhaftigkeit und vor allem die Möglichkeiten generativer Gestaltung zu präsentieren. <br>
+                        Werte, Eigenschaften, Besonderheiten und Bildsprache wurden untersucht und in Code übersetzt um
+                        damit eine Abstraktion der Werke vornehmen zu können. Es kann dabei sowohl im Verstärken
+                        einzelner Aspekte eines Werkes münden, als auch zu einem Entgegenwirken manch anderer
+                        kommen.<br><br>
+
+                        So handelt es sich um gezielte Bildmanipulation <span class="textSpecial">(Manipulatio)</span>
+                        und die damit neu entstehenden
+                        Kreationen <span class="textSpecial">(Creatio)</span>.<br><br>
+
+                        Zur Verwendung eines jeden Tools wird nur eine Tastatur und eine Maus (oder auch Trackpad)
+                        benötigt. Jedes Tool erklärt dabei am linken unteren Bildschirmrand jede implementierte
+                        Interaktionsmöglichkeit. Durch Auswahl eines Künstlers auf der rechten Seite wird auch das
+                        passende Tool auf der linken gestartet. <br>
+                        Exploriere, experimentiere und habe Spaß mit den Tools!
+                        <br>Die beste und volle Funktionalität ist hierbei mit Google Chrome im Vollbild an
+                        einem Computer gewährleistet. <br><br>
+
+                        Der Beschreibungstext zu jedem Künstler dient hierbei als Herleitung der jeweiligen Werkzeuge
+                        und sorgt für ein besseres Verständnis der Werke und der Arbeit <span
+                            class="textSpecial">Manipulatio et Creatio.</span><br>
+                        Durch den Kontext der Kunstwerke erhält das Projekt eine Emotionalität; handelt es sich doch bei
+                        jedem Werk um eine meisterhafte Kreation seiner Zeit. Es kommt zu einer emotionalen Aufladung,
+                        die das Thema Coding auf eine dem Menschen nähere Ebene erhebt.<br><br>
+
+                        Anders als mit herkömmlichen Designwerkzeugen schafft die parametrische Arbeitsweise der
+                        generativen Gestaltung völlig eigene und vollkommen neue Möglichkeiten. Der*die Designer*in
+                        erschafft
+                        hierbei nicht primär durch eine Benutzeroberfläche, sondern durch den von ihm geschriebenen
+                        Code. Werden Photoshop und Co. durch direkte Eingabe Stück für Stück zum erwünschten Ziel
+                        verwendet, setzen 'Creative Coder' immer wieder an der Basis des Tools, also dem Code, an.
+                        Nicht das eigentliche Ergebnis wird manipuliert, sondern der Algorithmus, der die Ergebnisse
+                        erzeugt. Die Arbeitsweise der ständigen Verbesserung des Codes kann häufig zu zufälligen
+                        Ergebnissen kommen, die nach weiteren Iterationen zu immer neuen Ausgaben führen können.<br><br>
+
+                        "Der Gestalter wird vom Abarbeiter zum Dirigenten, zum 'Arbeitgeber' an den Rechnern und selbst
+                        zum Entscheider. […] Den Mac für sich Varianten erarbeiten lassen und dann auswählen" <br>
+                        ('Generative Gestaltung' Editorial: Groß, B; Bohnacker, H; Laub, J; Lazzeroni, C; 2018)<br><br>
+
+                        Im Bereich des Produktdesigns gehören Praktiken des generativen Designs schon seit einiger Zeit
+                        zum Standardrepertoire; in vielen anderen Bereichen der Gestaltung scheint dies noch nicht der
+                        Fall zu sein. <br>
+                        Dieses Projekt ist dafür da, dem*der Designer*in Möglichkeiten des 'Creative Codings'
+                        aufzuzeigen und
+                        die
+                        besonderen Ergebnisse durch Interaktion erfahrbar zu machen. Die spielerische Anwendung lässt
+                        das
+                        eigentliche Schreiben der Tools in den Hintergrund rücken und macht die Thematik für den*die
+                        Designer*in zugänglicher. <br><br>
+
+                        Alle entstandenen Werke durch <span class="textSpecial">Manipulatio et Creatio</span> können
+                        nach der 'Creative Commons
+                        Attribution-Share Alike 4.0 International' – Lizenz weiterverwendet werden (mehr Informationen
+                        unter Urheberrecht).<br><br>
+
+                        <span class="textSpecial">Manipulatio et Creatio ist die Bachelorarbeit von
+                            Kommunikationsdesigner Moritz Lambrecht;
+                            entstanden 2022 an der Hochschule für Kommunikation und Gestaltung, Stuttgart.</span>
+                    </p>
+                </div>
+
+                <div class="column">
+                    <div class="artists" onclick="scrollToArtist('rubens');">
+                        <details open>
+                            <summary id="rubens">
+                                <h2 onclick="go('sketch_Rubens.html');">Peter Paul Rubens</h2>
+                            </summary>
+                            <br>
+                            <p>
+                                <span class="textSpecial">Diana mit Nymphen, beim Aufbruch zur Jagd – ca. 1615 <a
+                                        href="urheberrecht.html#rubensSource" target="_blank">[Q1]</a></span>
+                                <br><br>
+                                Das Werk Rubens' ist eine komplexe Komposition mythologischer Symbolik. Die römische
+                                Göttin
+                                der Jagd Diana samt ihrer Nymphen-Gefolgschaft und Jagdhunden präsentiert sich anmutig
+                                im
+                                visuellen Schwerpunkt des Abgebildeten. Wiederkehrende Symbolik der Weiblichkeit in Form
+                                der
+                                entblößten Oberweite dreier Nymphen wird geschnitten von energischer Einvernehmung eines
+                                Satyrs, der lasziv zum Kuss einer Nymphe ansetzt. <br>
+                                Zusammen mit einem weiteren männlichen Geschöpf, der nicht minder überfällig in das
+                                Gemälde
+                                zu greifen versucht, steht dieser in
+                                starkem Kontrast zu Dianas genereller Fernhaltung zum männlichen Geschlecht.<br><br>
+
+                                Das Werk erhält besondere Bedeutung durch Ausdruck in Mimik und Gestik der
+                                Porträtierten.
+                                Ein Blick in die Gesichter erzählt eine ganz eindeutige Geschichte: Scheint der Satyr
+                                zwar
+                                äußerst determiniert in seiner Absicht des leiblichen Überfalls, lässt sein Gesicht
+                                keinen
+                                Hinweis auf Bösartigkeit zu. Auch der geschnittene Mann am linken Gemälderand kommt eher
+                                aussichtslos in das Geschehnis. Die klare Ablehnung der ersten Nymphe von links –
+                                deutlich
+                                in Gesicht, Kopf und Armen zu lesen – kombiniert mit dem beobachtenden und fast scheuen
+                                Verhalten der rechten zwei, erzeugt eine spannende Dissonanz der Tonalität.<br>
+                                Dianas Blick zum*zur Betrachter*in und ihre weiter in den Vordergrund rückende Person
+                                scheint
+                                fast lehrenden Charakter zu besitzen. Zeigt sie Betrachtenden doch, dass ihre Ablehnung
+                                des
+                                Männlichen durchaus berechtigt zu sein scheint. <br>
+                            </p>
+                            <div id="samples">
+                                <img src="sampleOutput/MetC_Rubens_Output.gif">
+                                <p class="imgSub"> <span class="italic">Beispielhafter Output des Tools Rubens</span>
+                                </p>
+                            </div>
+                            <p><mark>Vom Werk zum Werkzeug:</mark><br> <br>
+
+                                Das Tool arbeitet mit der spannenden und detailreichen Komposition Rubens'. Es
+                                ermöglicht
+                                eine Neulenkung der Betrachtenden, eine Betonung, eine Entartung. Eine Manipulation des
+                                Ausgangswerkes zur Erzeugung von etwas Neuem, etwas, das sowohl vage, als auch deutlich
+                                zu
+                                sein vermag.</p>
+                        </details>
+                    </div>
+
+                    <hr>
+                    <div class="artists" onclick="scrollToArtist('renoir');">
+                        <details>
+                            <summary id="renoir">
+                                <h2 onclick="go('sketch_Renoir.html');"> Pierre–Auguste Renoir
+                                </h2>
+                            </summary>
+                            <br>
+                            <p>
+                                <span class="textSpecial">Die zwei Schwestern, Auf der Terrasse – 1881<a
+                                        href="urheberrecht.html#renoirSource" target="_blank">[Q2]</a></span> <br><br>
+
+                                Als bedeutender Impressionist bringt Renoir den*die Betrachter*in des Werks in den
+                                Moment – mit
+                                in
+                                das späte 19. Jahrhundert direkt auf die Terrasse eines Cafés in Paris. Das schöne
+                                Wetter
+                                und die Seine im Hintergrund sind maßgeblich für die sommerliche Stimmung des Gemäldes
+                                verantwortlich.<br>
+                                Zwei Schwestern zeigen sich festlich; geschmückt mit Blumen und Kleidung in
+                                Blau bei der älteren und maritimer Farbkombination aus Weiß und Blau bei der jüngeren.
+                                Renoir erzählt von einem leichten und unbelasteten Tag der beiden, was sich deutlich im
+                                Gesicht des zentrierten Mädchens äußert. Scheint nicht nur ihre Mimik entspannt,
+                                auch ihre vor ihr im Schoß gefalteten Hände weisen auf eine ruhige Situation hin.<br>
+                                Aus dem farblich beinahe monochrom scheinenden Hintergrund stechen vor allem das starke
+                                Blau
+                                der Kleidung der älteren Schwester und das Gemisch aus Ocker, Orange und leuchtend Rot
+                                in
+                                ihrem Hut und in einer Blume des kleinen Mädchens deutlich hervor.
+                            </p>
+                            <div id="samples">
+                                <img src="sampleOutput/MetC_Renoir_Output.gif">
+                                <p class="imgSub"> <span class="italic">Beispielhafter Output des Tools Renoir</span>
+                                </p>
+                            </div>
+                            <p><mark>Vom Werk zum Werkzeug:</mark><br> <br>
+
+                                Reduzierte man den Impressionismus auf einen einzigen Aspekt, so
+                                könnten der besondere Farbauftrag, der Pinselduktus, die Farbakkorde aber auch die
+                                alltäglichen, überwiegend ruhigen Motive dafür herhalten. Im Falle dieses Tools kommt es
+                                zu
+                                einer Extraktion aller Farbwerte des Gemäldes mit einer anschließenden abstrahierten
+                                Rasteransicht, sich selbst austauschender Farbflächen. Trotz dieser starken Abstraktion
+                                bleibt
+                                ein Charakter des Werks erhalten – die überwiegend blau / grün / graue Tonalität mit
+                                Akzenten in Rot, Orange, Ockertönen. Erlebe das Farbrauschen der zwei Schwestern auf der
+                                Terrasse.</p>
+                        </details>
+                    </div>
+                    <hr>
+                    <div class="artists" onclick="scrollToArtist('caravaggio');">
+                        <details>
+                            <summary id="caravaggio">
+                                <h2 onclick="go('sketch_Caravaggio.html');">Michelangelo
+                                    Merisi da Caravaggio</h2>
+                            </summary>
+                            <br>
+                            <p>
+                                <span class="textSpecial">Judith enthauptet Holofernes – ca. 1599<a
+                                        href="urheberrecht.html#caravaggioSource" target="_blank">[Q3]</a></span>
+                                <br><br>
+
+                                Ganz im Sinne Caravaggios typischen Chiaroscuro zeigt sich dieses Werk überwiegend
+                                düster
+                                mit einer beinahe übernatürlichen Lichtsituation, die für einen starken Kontrast in Hell
+                                und
+                                Dunkel sorgt. Vor einem dunkelroten Grund sind die Dargestellten isoliert, der Klimax
+                                der
+                                biblischen Geschichte makaber betont.<br><br>
+
+                                So baut Caravaggio drei Protagonisten eine Bühne, die erleuchtet einem grausamen
+                                Schauspiel
+                                zu verfallen scheinen: <br>
+                                Die junge Judith, die ihr Volk vor dem assyrischen General Holofernes
+                                zu bewahren versucht, dient als Symbol der Entschlossenheit. Judiths junge, schwache und
+                                unbefleckte Erscheinung hält sie nicht davon ab, mit festem Griff die Haare Holofernes'
+                                in
+                                einer Hand, mit der anderen dessen eigenes Schwert bereits tief seinem Hals vergraben,
+                                den
+                                Tötungsakt unbewegt zu vollenden. Ihre abschätzige Haltung unterstreicht noch einmal,
+                                dass
+                                ihre Absicht einer unüberwindbaren Eindeutigkeit folgen musste.<br><br>
+
+                                Zur ihrer Rechten baut sich ein Abbild einer alten Frau mit tiefen Falten im Gesicht
+                                auf. Im
+                                Kontrast zu Judith scheint auch ihre Kleidung älter – hat diese etwa die Erscheinung
+                                alter
+                                Leinen – im Gegensatz zu Judiths klarem, weißen Kleid mit bronze / goldenem Anteil. Mit
+                                hasserfülltem Blick sind ihre Augen auf den verurteilten Mann gerichtet. Einen Sack in
+                                beiden Händen, entschlossen, den Kopf Holofernes' nach vollendeter Trennung vom
+                                Oberkörper
+                                darin aufzufangen. <br><br>
+
+                                Der hilflose Holofernes – angesichts seiner Physis zwar überlegen – doch durch die
+                                überraschende Situation und betrunken seinem Schicksal ausgeliefert, kann lediglich
+                                versuchen das Antlitz seiner Enthaupterin noch schnell zu erhaschen, bevor er seinen
+                                Kampf
+                                aufgeben muss.<br><br>
+
+                                Die Betonung in Gegensätzen, zusammen mit der grausamen Szenerie, lässt Caravaggio
+                                einen aufgeladenen Klimax bei Betrachtenden erzeugen. Jung und alt, schwach und stark,
+                                Mann
+                                und
+                                Frau, Weiß und Grau, Unschuld und Grausamkeit hauchen dem Gemälde Leben ein.
+                            </p>
+                            <div id="samples">
+                                <img src="sampleOutput/MetC_Caravaggio_Output.gif">
+                                <p class="imgSub"> <span class="italic">Beispielhafter Output des Tools
+                                        Caravaggio</span>
+                                </p>
+                            </div>
+                            <p><mark>Vom Werk zum Werkzeug:</mark><br> <br>
+
+                                Der vertikalen und horizontalen Personenkonstellation wirkt ein fatales Gewicht
+                                entgegen.
+                                Schneidet Holofernes' Klinge nicht nur dessen Kopf vom Leib, sie scheint auch die
+                                Komposition, gar das Gemälde selbst diagonal zu entzweien. Schwert und Blut erzählen die
+                                Geschichte der Brutalität.<br>
+                                Diesen Aspekt nimmt das Tool auf. Es verstärkt und versetzt diesen Schnitt. Es geht über
+                                den
+                                Gemälderand hinaus und schneidet und zerteilt.</p>
+                        </details>
+                    </div>
+                    <hr>
+                    <div class="artists" onclick="scrollToArtist('van_Gogh');">
+                        <details>
+                            <summary id="van_Gogh">
+                                <h2 onclick="go('sketch_vanGogh.html');">Vincent van Gogh</h2>
+                            </summary>
+                            <br>
+                            <p>
+                                <span class="textSpecial">Selbstbildnis – 1889<a href="urheberrecht.html#vanGoghSource"
+                                        target="_blank">[Q4]</a></span> <br><br>
+
+                                Als letzte Selbstdarstellung van Goghs – bevor er schon im darauffolgenden Jahr sterben
+                                wird
+                                – muss sich dieses Werk einer besonderen Bedeutungsschwere ergeben.
+                                Zeigt es doch den letzten einsehbaren Blick eines unglaublichen Künstlers auf sich
+                                selbst.<br><br>
+
+                                Der Maler präsentiert sich im Halbprofil auf einem unruhigen Hintergrund, der durch
+                                seine Unförmigkeit keinen konkreten Raum erahnen lässt.
+                                Fast monochromatisch ist die Farbpalette: Kalt und warm stoßen zusammen in Objekt und
+                                Fleisch. So ist der Hintergrund und van Goghs Jackett in einer blau - türkisen
+                                Farbmasse,
+                                sein
+                                Kopf und seine Haare in Grün, respektive Orange gemalt.<br>
+                                Vom bogenförmigen Wirrwarr des Hintergrunds sticht der Kopf vor allem durch diese
+                                Farbgebung
+                                besonders hervor. Auch folgen die Pinselstriche seines Kopfes einem eigenen Rhythmus,
+                                der
+                                sich gegen den Rest aufzubäumen versucht. Viel klarer und kompromissloser zeichnen sich
+                                einzelne Haare vom sichtlich ausgemergelten Antlitz van Goghs ab, während besonders
+                                seine
+                                Augen den*die Betrachter*in durchbohren.<br>
+                                Lässt zwar die Körperlichkeit das fortgeschrittene Alter erahnen, zeigt sich van Gogh in
+                                diesem letzten Selbstporträt nicht so düster, wie er es früher häufig tat. Er zeigt sich
+                                hell und mit weichen, entsättigten Farben, statt kontrastreich und dunkel.
+                                Sein Blick ist nicht düster, sondern fast gnädig, dennoch streng.
+
+                            </p>
+                            <div id="samples">
+                                <img src="sampleOutput/MetC_vanGogh_Output.gif">
+                                <p class="imgSub"> <span class="italic">Beispielhafter Output des Tools van Gogh</span>
+                                </p>
+                            </div>
+                            <p><mark>Vom Werk zum Werkzeug:</mark><br> <br>
+
+                                Liefert van Gogh sein Abbild dem amorphen Hintergrund bewusst kaum aus, lässt das Tool
+                                eine
+                                Verschmelzung aller Ebenen zu. Es spielt mit dem Aspekt der Wellenform und ermöglicht
+                                radiale Vermischung und Verfremdung. Das Gemälde wird aufgebrochen, das Selbstbildnis
+                                seiner
+                                sicheren Position im Zentrum des Wellenmeeres entzogen.</p>
+                        </details>
+                    </div>
+                    <hr>
+                    <div class="artists" onclick="scrollToArtist('mondrian');">
+                        <details>
+                            <summary id="mondrian">
+                                <h2 onclick="go('sketch_Mondrian.html');">Piet Mondrian</h2>
+                            </summary>
+                            <br>
+                            <p>
+                                <span class="textSpecial">Komposition mit großer blauer Fläche, Rot, Schwarz, Gelb und
+                                    Grau
+                                    – 1921<a href="urheberrecht.html#mondrianSource" target="_blank">[Q5]</a></span>
+                                <br><br>
+
+                                Der niederländische Maler bringt Abstraktion zu seiner Zeit zu neuer Bedeutung.
+                                Kompromisslos, fast berechenbar kommen die einfarbigen Flächen und Linien Mondrians auf
+                                die
+                                Leinwand. Die geometrische Anordnung entzieht sich jeglicher klassischer Räumlichkeit.
+                                Und
+                                doch lässt das Zusammenspiel der wenigen Elemente ganze Landschaften eines
+                                eindimensionalen
+                                Raumes entstehen.<br><br>
+
+                                Das übergeordnete Raster dicker, schwarzer Linien erzeugt in kleinen Überschneidungen
+                                einen
+                                Raum für jede Farbe, die Verwendung findet. Farbkontraste im hellen Grau des
+                                Hintergrundes
+                                und Schwarz der Rasterlinien erzeugen
+                                Spannung, während die schwarze Fläche um die Aufmerksamkeit gegen die Übermacht der
+                                blauen kämpft. Vollflächiger Farbauftrag weicht leeren Zellen, Schwarz weicht hellem
+                                Grau,
+                                die flache Leinwand weicht einem surrealen Raum.<br><br>
+
+                                Mondrians Neoplastizismus bedient sich Grundformen und Grundfarben, ist aber dennoch
+                                nicht
+                                gewöhnlich. So wird seine Abstraktion auch noch 100 Jahre nach der Erschaffung seiner
+                                Werke
+                                Bedeutung in Kunst, Mode und Popkultur erfahren.
+
+                            </p>
+                            <div id="samples">
+                                <img src="sampleOutput/MetC_Mondrian_Output.gif">
+                                <p class="imgSub"> <span class="italic">Beispielhafter Output des Tools Mondrian</span>
+                                </p>
+                            </div>
+                            <p><mark>Vom Werk zum Werkzeug:</mark><br> <br>
+
+                                Der flachen Bildkomposition, den Vertikalen und Horizontalen entgegen, ermöglicht das
+                                Tool
+                                eine weitere Ebene in das Werk einzuarbeiten. Das graduelle Verkleinern oder Vergrößern
+                                erweitert Mondrians Bildsprache und Komposition um eine diagonale Achse. Die
+                                geometrischen,
+                                perfekten Flächen werden aufgebrochen in eine imperfekte Tiefenwirkung.</p>
+                        </details>
+                    </div>
+                    <hr>
+
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <ul class="nav">
+
+                <li><a href="urheberrecht.html">
+                        <h2><mark>Urheberrecht</mark></h2>
+                    </a></li>
+                <li><a href="impressum.html">
+                        <h2><mark>Impressum</mark></h2>
+                    </a></li>
+                <li><a href="datenschutz.html">
+                        <h2><mark>Datenschutz</mark></h2>
+                    </a></li>
+
+            </ul>
+        </footer>
+    </div>
+
+    <script type="text/javascript">
+        
+        //autoclose details
+        $('details').click(function (event) {
+            $('details').not(this).removeAttr("open");
+        });
+
+        //change logo onscroll
+        $(function () {
+            var logo = $(".indexLogo");
+            $(window).scroll(function () {
+                var scroll = $(window).scrollTop();
+
+                if (scroll >= 200) {
+                    logo.removeClass('indexLogo').addClass("indexLogoSmall");
+                } else {
+                    logo.removeClass("indexLogoSmall").addClass('indexLogo');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
